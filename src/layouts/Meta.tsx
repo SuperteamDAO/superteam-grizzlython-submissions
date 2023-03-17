@@ -48,7 +48,7 @@ const Meta = (props: IMetaProps) => {
         />
       </Head>
       <NextSeo
-        title={`${props.title} | Crust`}
+        title={`${props.title}`}
         description={props.description}
         canonical={props.canonical}
         openGraph={{

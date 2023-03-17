@@ -2,6 +2,9 @@
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    fontFamily: {
+      sans: ['Lato', 'sans-serif'],
+    },
     fontSize: {
       xs: '0.75rem',
       sm: '0.875rem',
@@ -16,43 +19,24 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: {
-          default: '#22223B',
-          50: '#B9B9D6',
-          100: '#ACACCF',
-          200: '#9292C0',
-          300: '#7878B1',
-          400: '#5E5EA2',
-          500: '#4F4F89',
-          600: '#40406F',
-          700: '#313155',
-          800: '#22223B',
-          900: '#0D0D17',
+        superteam: {
+          primary: '#5522e0',
+          'primary-light': '#bcb3ff',
+          secondary: '#f4a60b',
+          'secondary-light': '#ffd9a1',
         },
-        secondary: '#F2E9E4',
-        tertiary: '#C9ADA7',
-        gray: {
-          100: '#f7fafc',
-          200: '#edf2f7',
-          300: '#e2e8f0',
-          400: '#cbd5e0',
-          500: '#a0aec0',
-          600: '#718096',
-          700: '#4a5568',
-          800: '#2d3748',
-          900: '#1a202c',
+        grizzlython: {
+          black: '#161515',
+          'tan-1': '#eae7dd',
+          'tan-2': '#979385',
+          'tan-faded': 'rgba(151,147,133,0.5)',
+          peach: '#f1b994',
+          red: '#ef474a',
+          'red-transparent': 'rgba(239, 71, 74, 0.05)',
         },
-        blue: {
-          100: '#ebf8ff',
-          200: '#bee3f8',
-          300: '#90cdf4',
-          400: '#63b3ed',
-          500: '#4299e1',
-          600: '#3182ce',
-          700: '#2b6cb0',
-          800: '#2c5282',
-          900: '#2a4365',
-        },
+      },
+      spacing: {
+        128: '32rem',
       },
     },
   },

@@ -22,10 +22,6 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
-    "@supabase/auth-helpers-nextjs": "^0.5.4",
-    "@supabase/auth-helpers-react": "^0.3.1",
-    "@supabase/supabase-js": "^2.8.0",
-    "@supabase/ui": "^0.36.5",
     "next": "^13.1.2",
     "next-seo": "^5.15.0",
     "next-sitemap": "^3.1.45",

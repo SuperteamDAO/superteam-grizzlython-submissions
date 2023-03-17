@@ -6,7 +6,7 @@ const List = () => {
           <div className="flex w-full justify-between gap-8">
             <div className="w-full">
               <h1 className="text-2xl font-bold tracking-tight text-zinc-100 sm:text-5xl">
-                Submissions
+                44 Submissions
               </h1>
               <div className="py-8">
                 <div className="mb-6 h-36 w-full rounded-md bg-zinc-800"></div>

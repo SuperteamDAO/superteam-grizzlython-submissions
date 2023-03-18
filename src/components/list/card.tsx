@@ -10,6 +10,27 @@ type CardProps = {
 const Card = ({ response }: CardProps) => {
   const router = useRouter();
 
+  let flag = '';
+  switch (response?.superteamMember) {
+    case 'India':
+      flag = '🇮🇳';
+      break;
+    case 'Germany':
+      flag = '🇩🇪';
+      break;
+    case 'Mexico':
+      flag = '🇲🇽';
+      break;
+    case 'Vietnam':
+      flag = '🇻🇳';
+      break;
+    case 'Turkey':
+      flag = '🇹🇷';
+      break;
+    default:
+      flag = '';
+  }
+
   const tracks = (response?.track || '').split(',');
 
   return (
@@ -27,14 +48,25 @@ const Card = ({ response }: CardProps) => {
         </div>
         <div className="w-full pl-2 md:pl-4">
           <div className="mb-1 flex w-full justify-between">
-            <a
-              href={response?.productUrl ? response?.productUrl : '#'}
-              target="_blank"
-              className="text-lg font-bold text-zinc-100 hover:underline"
-              rel="noreferrer"
-            >
-              {response.name}
-            </a>
+            <div className="flex items-center justify-start">
+              <a
+                href={response?.productUrl ? response?.productUrl : '#'}
+                target="_blank"
+                className="flex items-center text-lg font-bold text-zinc-100 hover:underline"
+                rel="noreferrer"
+              >
+                {response.name}
+              </a>
+              <span className="ml-2" data-tooltip-id={response?.name}>
+                {flag}
+              </span>
+              <Tooltip id={response?.name} place="right">
+                <p className="text-center font-sans text-xs">
+                  Project from <br />
+                  Superteam {response?.superteamMember}
+                </p>
+              </Tooltip>
+            </div>
             {response?.demoUrl && (
               <div className="flex items-center justify-end">
                 <a
@@ -63,19 +95,6 @@ const Card = ({ response }: CardProps) => {
           </div>
           <p className="mb-2 text-sm text-zinc-300">{response.description}</p>
           <p className="mb-2 flex flex-wrap items-center justify-start">
-            <img
-              data-tooltip-id={response?.name}
-              className="h-4 w-4 rounded-full"
-              src={`${router.basePath}/assets/images/st-${response?.superteamMember}.png`}
-              alt={response.name}
-            />
-            <Tooltip id={response?.name} place="right">
-              <p className="text-center font-sans text-xs">
-                Team from <br />
-                Superteam {response?.superteamMember}
-              </p>
-            </Tooltip>
-            <span className="px-2 text-xs text-zinc-500">·</span>
             {response?.productUrl && (
               <a
                 href={response?.productUrl}

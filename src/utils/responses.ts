@@ -146,7 +146,7 @@ export const responses: Array<Response> = [
     track: 'DeFi, Consumer',
     demoUrl: '',
     category: 'DeFi, Consumer',
-    superteamMember: 'India',
+    superteamMember: 'Turkey',
   },
   {
     order: 6,
@@ -275,7 +275,7 @@ export const responses: Array<Response> = [
     track: 'Consumer, Tools & Infrastructure',
     demoUrl: '',
     category: 'Consumer, Tools & Infrastructure',
-    superteamMember: 'India',
+    superteamMember: 'Vietnam',
   },
   {
     order: 11,
@@ -300,7 +300,7 @@ export const responses: Array<Response> = [
     track: 'Tools & Infrastructure, Mobile',
     demoUrl: '',
     category: 'Tools & Infrastructure, Mobile',
-    superteamMember: 'India',
+    superteamMember: 'Mexico',
   },
   {
     order: 12,
@@ -325,7 +325,7 @@ export const responses: Array<Response> = [
     track: 'Mobile, Payments, Consumer',
     demoUrl: '',
     category: 'Mobile, Payments, Consumer',
-    superteamMember: 'India',
+    superteamMember: 'Mexico',
   },
   {
     order: 13,
@@ -350,6 +350,6 @@ export const responses: Array<Response> = [
     track: 'DAOs and Network States',
     demoUrl: '',
     category: 'DAOs and Network States',
-    superteamMember: 'India',
+    superteamMember: 'Germany',
   },
 ];

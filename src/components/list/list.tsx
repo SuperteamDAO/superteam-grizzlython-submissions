@@ -1,4 +1,19 @@
+import { useState } from 'react';
+
+import { responses } from '@/utils/responses';
+
+import Card from './card';
+
 const List = () => {
+  const [filteredResponses, setFilteredResponses] = useState(
+    responses.sort((a, b) =>
+      a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1
+    )
+  );
+  console.log(
+    'file: list.tsx:9 ~ List ~ setFilteredResponses:',
+    setFilteredResponses
+  );
   return (
     <div className="w-full sm:px-8">
       <div className="mx-auto w-full max-w-7xl lg:px-8">
@@ -6,15 +21,13 @@ const List = () => {
           <div className="flex w-full justify-between gap-8">
             <div className="w-full">
               <h1 className="text-2xl font-bold tracking-tight text-zinc-100 sm:text-5xl">
-                44 Submissions
+                {responses?.length} Submissions
               </h1>
-              <div className="py-8">
-                <div className="mb-6 h-36 w-full rounded-md bg-zinc-800"></div>
-                <div className="mb-6 h-36 w-full rounded-md bg-zinc-800"></div>
-                <div className="mb-6 h-36 w-full rounded-md bg-zinc-800"></div>
-                <div className="mb-6 h-36 w-full rounded-md bg-zinc-800"></div>
-                <div className="mb-6 h-36 w-full rounded-md bg-zinc-800"></div>
-              </div>
+              <ul className="py-8">
+                {filteredResponses.map((response) => (
+                  <Card response={response} key={response.order} />
+                ))}
+              </ul>
             </div>
             <div className="hidden w-1/3 rounded border border-zinc-700 bg-zinc-800 py-6 px-8 md:block">
               <div className="mb-6">

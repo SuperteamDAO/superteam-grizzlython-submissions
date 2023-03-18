@@ -12,7 +12,7 @@ const Header = () => {
               <img
                 className="h-40 w-auto md:h-80"
                 src={`${router.basePath}/assets/images/grizzlython-logo-white.png`}
-                alt=""
+                alt="Solana Grizzlython"
               />
               <div className="px-8 text-2xl font-thin text-white md:text-4xl">
                 X
@@ -20,7 +20,7 @@ const Header = () => {
               <img
                 className="h-24 w-auto md:h-48"
                 src={`${router.basePath}/assets/images/superteam-logo-white.png`}
-                alt=""
+                alt="Superteam"
               />
             </div>
             <div className="-mt-6 flex items-center justify-center md:-mt-12">

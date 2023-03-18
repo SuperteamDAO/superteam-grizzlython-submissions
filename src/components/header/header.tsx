@@ -10,17 +10,17 @@ const Header = () => {
           <div className="h-64 bg-gradient-to-t from-[#5522e0_-126.34%] md:h-128 lg:to-[rgba(0,0,0,0)_82.81%]">
             <div className="flex items-center justify-center">
               <img
-                className="h-40 w-auto md:h-80"
-                src={`${router.basePath}/assets/images/grizzlython-logo-white.png`}
-                alt="Solana Grizzlython"
+                className="h-24 w-auto md:h-48"
+                src={`${router.basePath}/assets/images/superteam-logo-white.png`}
+                alt="Superteam"
               />
               <div className="px-8 text-2xl font-thin text-white md:text-4xl">
                 X
               </div>
               <img
-                className="h-24 w-auto md:h-48"
-                src={`${router.basePath}/assets/images/superteam-logo-white.png`}
-                alt="Superteam"
+                className="h-40 w-auto md:h-80"
+                src={`${router.basePath}/assets/images/grizzlython-logo-white.png`}
+                alt="Solana Grizzlython"
               />
             </div>
             <div className="-mt-6 flex items-center justify-center md:-mt-12">
@@ -32,7 +32,6 @@ const Header = () => {
                 <br />
                 hackathon submissions made by
                 <br />
-                the{' '}
                 <span className="font-bold text-superteam-secondary">
                   Superteam
                 </span>{' '}
@@ -83,11 +82,11 @@ const Header = () => {
                 ></path>
                 <path
                   d="M360.66 232.917L357.237 234.029C356.324 234.714 353.883 236.083 351.419 236.083C348.955 236.083 346.97 234.315 346.286 233.431L347.569 230.265L343.977 222.138L346.286 199.465L350.65 201.861C350.308 198.576 352.617 190.225 353.815 186.461C357.579 188.001 361.429 218.031 361.686 218.373C361.891 218.647 364.11 219.685 365.194 220.169L360.66 232.917Z"
-                  fill="#F43F42"
+                  fill="#5522e0"
                 ></path>
                 <path
                   d="M355.579 228.871L354.46 229.392C354.161 229.713 353.362 230.354 352.556 230.354C351.75 230.354 351.101 229.526 350.877 229.112L351.297 227.629L350.121 223.821L350.877 213.198L352.304 214.321C352.192 212.781 352.948 208.869 353.34 207.105C354.572 207.827 355.831 221.896 355.915 222.057C355.982 222.185 356.708 222.671 357.063 222.898L355.579 228.871Z"
-                  fill="#FFC29B"
+                  fill="#bcb3ff"
                 ></path>
                 <mask
                   id="mask0_13_229639"

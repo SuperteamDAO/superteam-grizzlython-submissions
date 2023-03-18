@@ -27,8 +27,32 @@ const Filters = ({ filters, setFilters }: FiltersProps) => {
     });
     setFilters(changedFilters);
   };
+
+  const removeFilters = () => {
+    const changedFilters = filters?.map((f) => {
+      const options = f?.options?.map((o) => ({
+        ...o,
+        isSelected: false,
+      }));
+      return {
+        ...f,
+        options,
+      };
+    });
+    setFilters(changedFilters);
+  };
+
   return (
     <div className="rounded border border-zinc-700 bg-zinc-800 px-2 py-3 md:px-6 md:py-4">
+      <div className="flex items-center justify-end">
+        <button
+          type="button"
+          onClick={() => removeFilters()}
+          className="cursor-pointer text-sm font-thin text-red-400 hover:text-zinc-100 hover:underline"
+        >
+          Clear All
+        </button>
+      </div>
       {filters?.map((filter, filterIndex) => (
         <div
           className={filterIndex < filters.length - 1 ? 'mb-6' : ''}
@@ -47,6 +71,7 @@ const Filters = ({ filters, setFilters }: FiltersProps) => {
                       name={option.id}
                       disabled={!option.count}
                       type="checkbox"
+                      checked={option.isSelected}
                       className="h-4 w-4 rounded border-gray-300 text-superteam-secondary focus:ring-superteam-secondary-light"
                     />
                   </div>

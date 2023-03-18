@@ -19,7 +19,7 @@ export type Response = {
   track: string;
   demoUrl?: string;
   category: string;
-  superteamMember?: string;
+  superteamMember: string;
 };
 
 export const responses: Array<Response> = [
@@ -91,9 +91,9 @@ export const responses: Array<Response> = [
     teamMembersSocialUrls: '',
     teamLeadDiscordId: '',
     teamMembersDiscordIds: '',
-    track: 'Web3 Consumer, Infrastructure & Tooling',
+    track: 'Consumer, Tools & Infrastructure',
     demoUrl: '',
-    category: 'Web3 Consumer, Infrastructure & Tooling',
+    category: 'Consumer, Tools & Infrastructure',
     superteamMember: 'India',
   },
   {
@@ -117,9 +117,9 @@ export const responses: Array<Response> = [
     teamMembersSocialUrls: '',
     teamLeadDiscordId: '',
     teamMembersDiscordIds: '',
-    track: 'Mobile, Payments, Infrastructure & Tooling, Web3 Consumer',
+    track: 'Mobile, Payments, Tools & Infrastructure, Consumer',
     demoUrl: '',
-    category: 'Mobile, Payments, Infrastructure & Tooling, Web3 Consumer',
+    category: 'Mobile, Payments, Tools & Infrastructure, Consumer',
     superteamMember: 'India',
   },
   {
@@ -143,9 +143,9 @@ export const responses: Array<Response> = [
     teamMembersSocialUrls: '',
     teamLeadDiscordId: '',
     teamMembersDiscordIds: '',
-    track: 'DeFi, Web3 Consumer',
+    track: 'DeFi, Consumer',
     demoUrl: '',
-    category: 'DeFi, Web3 Consumer',
+    category: 'DeFi, Consumer',
     superteamMember: 'India',
   },
   {
@@ -168,9 +168,9 @@ export const responses: Array<Response> = [
     teamMembersSocialUrls: '',
     teamLeadDiscordId: '',
     teamMembersDiscordIds: '',
-    track: 'Infrastructure & Tooling, Web3 Consumer',
+    track: 'Tools & Infrastructure, Consumer',
     demoUrl: '',
-    category: 'Infrastructure & Tooling, Web3 Consumer',
+    category: 'Tools & Infrastructure, Consumer',
     superteamMember: 'India',
   },
   {
@@ -194,9 +194,9 @@ export const responses: Array<Response> = [
     teamMembersSocialUrls: '',
     teamLeadDiscordId: '',
     teamMembersDiscordIds: '',
-    track: 'DAOs, Mobile, Web3 Consumer',
+    track: 'DAOs, Mobile, Consumer',
     demoUrl: '',
-    category: 'DAOs, Mobile, Web3 Consumer',
+    category: 'DAOs, Mobile, Consumer',
     superteamMember: 'India',
   },
   {
@@ -220,9 +220,9 @@ export const responses: Array<Response> = [
     teamMembersSocialUrls: '',
     teamLeadDiscordId: '',
     teamMembersDiscordIds: '',
-    track: 'DeFi, Web3 Consumer',
+    track: 'DeFi, Consumer',
     demoUrl: '',
-    category: 'DeFi, Web3 Consumer',
+    category: 'DeFi, Consumer',
     superteamMember: 'India',
   },
   {
@@ -245,9 +245,9 @@ export const responses: Array<Response> = [
     teamMembersSocialUrls: '',
     teamLeadDiscordId: '',
     teamMembersDiscordIds: '',
-    track: 'DAOs, Web3 Consumer, Infrastructure & Tooling, Mobile',
+    track: 'DAOs, Consumer, Tools & Infrastructure, Mobile',
     demoUrl: '',
-    category: 'DAOs, Web3 Consumer, Infrastructure & Tooling, Mobile',
+    category: 'DAOs, Consumer, Tools & Infrastructure, Mobile',
     superteamMember: 'India',
   },
   {
@@ -271,9 +271,9 @@ export const responses: Array<Response> = [
     teamMembersSocialUrls: '',
     teamLeadDiscordId: '',
     teamMembersDiscordIds: '',
-    track: 'Web3 Consumer, Infrastructure & Tooling',
+    track: 'Consumer, Tools & Infrastructure',
     demoUrl: '',
-    category: 'Web3 Consumer, Infrastructure & Tooling',
+    category: 'Consumer, Tools & Infrastructure',
     superteamMember: 'India',
   },
   {
@@ -296,9 +296,9 @@ export const responses: Array<Response> = [
     teamMembersSocialUrls: '',
     teamLeadDiscordId: '',
     teamMembersDiscordIds: '',
-    track: 'Infrastructure & Tooling, Mobile',
+    track: 'Tools & Infrastructure, Mobile',
     demoUrl: '',
-    category: 'Infrastructure & Tooling, Mobile',
+    category: 'Tools & Infrastructure, Mobile',
     superteamMember: 'India',
   },
   {
@@ -321,9 +321,9 @@ export const responses: Array<Response> = [
     teamMembersSocialUrls: '',
     teamLeadDiscordId: '',
     teamMembersDiscordIds: '',
-    track: 'Mobile, Payments, Web3 Consumer',
+    track: 'Mobile, Payments, Consumer',
     demoUrl: '',
-    category: 'Mobile, Payments, Web3 Consumer',
+    category: 'Mobile, Payments, Consumer',
     superteamMember: 'India',
   },
   {

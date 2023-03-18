@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
+import { initFilters } from '@/utils/filters';
 import { responses } from '@/utils/responses';
 
 import Card from './card';
+import Filters from './filters';
 
 const List = () => {
   const [filteredResponses, setFilteredResponses] = useState(
@@ -10,10 +12,58 @@ const List = () => {
       a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1
     )
   );
-  console.log(
-    'file: list.tsx:9 ~ List ~ setFilteredResponses:',
-    setFilteredResponses
-  );
+  const initializedFilters = initFilters(responses);
+  const [filters, setFilters] = useState(initializedFilters);
+
+  useEffect(() => {
+    const trueFilters = filters
+      .map((f) => {
+        const trueOptions = f.options.filter((o) => o.isSelected);
+        console.log(
+          'file: list.tsx:21 ~ trueFilters ~ trueOptions:',
+          trueOptions
+        );
+        if (trueOptions.length) {
+          return {
+            ...f,
+            options: trueOptions,
+          };
+        }
+        return null;
+      })
+      .filter((f) => !!f);
+    if (!trueFilters.length) {
+      const changedResponses = responses?.sort((a, b) =>
+        a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1
+      );
+      setFilteredResponses(changedResponses);
+    } else {
+      const trackOptions = trueFilters
+        ?.find((tf) => tf?.id === 'track')
+        ?.options?.map((o) => o.id);
+      const superteamMemberOptions = trueFilters
+        ?.find((tf) => tf?.id === 'superteamMember')
+        ?.options?.map((o) => o.id);
+
+      const changedResponses = responses
+        ?.filter((r) => {
+          const isTrack = trackOptions?.length
+            ? !!trackOptions.find((t) => r?.track?.indexOf(t) >= 0)
+            : true;
+          const isSuperteamMember = superteamMemberOptions?.length
+            ? !!superteamMemberOptions.find(
+                (st) => r?.superteamMember?.indexOf(st) >= 0
+              )
+            : true;
+          return isTrack && isSuperteamMember;
+        })
+        ?.sort((a, b) =>
+          a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1
+        );
+      setFilteredResponses(changedResponses);
+    }
+  }, [filters]);
+
   return (
     <div className="w-full sm:px-8">
       <div className="mx-auto w-full max-w-7xl lg:px-8">
@@ -21,7 +71,11 @@ const List = () => {
           <div className="flex w-full justify-between gap-8">
             <div className="w-full">
               <h1 className="text-2xl font-bold tracking-tight text-zinc-100 sm:text-5xl">
-                {responses?.length} Submissions
+                Submissions (
+                {filteredResponses?.length !== responses?.length
+                  ? `${filteredResponses?.length} of ${responses?.length}`
+                  : responses?.length}
+                )
               </h1>
               <ul className="py-8">
                 {filteredResponses.map((response) => (
@@ -29,251 +83,8 @@ const List = () => {
                 ))}
               </ul>
             </div>
-            <div className="hidden w-1/3 rounded border border-zinc-700 bg-zinc-800 py-6 px-8 md:block">
-              <div className="mb-6">
-                <h5 className="mb-3 text-zinc-100">Hackathon Track</h5>
-                <fieldset>
-                  <div className="space-y-2">
-                    <div className="relative flex items-start">
-                      <div className="flex h-6 items-center">
-                        <input
-                          id="comments"
-                          aria-describedby="comments-description"
-                          name="comments"
-                          type="checkbox"
-                          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                        />
-                      </div>
-                      <div className="ml-3 text-sm leading-6">
-                        <label
-                          htmlFor="comments"
-                          className="font-thin text-zinc-300"
-                        >
-                          Mobile <span className="text-zinc-400">(22)</span>
-                        </label>
-                      </div>
-                    </div>
-                    <div className="relative flex items-start">
-                      <div className="flex h-6 items-center">
-                        <input
-                          id="candidates"
-                          aria-describedby="candidates-description"
-                          name="candidates"
-                          type="checkbox"
-                          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                        />
-                      </div>
-                      <div className="ml-3 text-sm leading-6">
-                        <label
-                          htmlFor="candidates"
-                          className="font-thin text-zinc-300"
-                        >
-                          DeFi <span className="text-zinc-400">(7)</span>
-                        </label>
-                      </div>
-                    </div>
-                    <div className="relative flex items-start">
-                      <div className="flex h-6 items-center">
-                        <input
-                          id="offers"
-                          aria-describedby="offers-description"
-                          name="offers"
-                          type="checkbox"
-                          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                        />
-                      </div>
-                      <div className="ml-3 text-sm leading-6">
-                        <label
-                          htmlFor="offers"
-                          className="font-thin text-zinc-300"
-                        >
-                          Payments <span className="text-zinc-400">(4)</span>
-                        </label>
-                      </div>
-                    </div>
-                    <div className="relative flex items-start">
-                      <div className="flex h-6 items-center">
-                        <input
-                          id="consumer"
-                          aria-describedby="consumer-description"
-                          name="consumer"
-                          type="checkbox"
-                          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                        />
-                      </div>
-                      <div className="ml-3 text-sm leading-6">
-                        <label
-                          htmlFor="consumer"
-                          className="font-thin text-zinc-300"
-                        >
-                          Consumer <span className="text-zinc-400">(9)</span>
-                        </label>
-                      </div>
-                    </div>
-                    <div className="relative flex items-start">
-                      <div className="flex h-6 items-center">
-                        <input
-                          id="tools"
-                          aria-describedby="tools-description"
-                          name="tools"
-                          type="checkbox"
-                          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                        />
-                      </div>
-                      <div className="ml-3 text-sm leading-6">
-                        <label
-                          htmlFor="tools"
-                          className="font-thin text-zinc-300"
-                        >
-                          Tools & Infrastructure{' '}
-                          <span className="text-zinc-400">(4)</span>
-                        </label>
-                      </div>
-                    </div>
-                    <div className="relative flex items-start">
-                      <div className="flex h-6 items-center">
-                        <input
-                          id="gaming"
-                          aria-describedby="gaming-description"
-                          name="gaming"
-                          type="checkbox"
-                          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                        />
-                      </div>
-                      <div className="ml-3 text-sm leading-6">
-                        <label
-                          htmlFor="gaming"
-                          className="font-thin text-zinc-300"
-                        >
-                          Gaming <span className="text-zinc-400">(1)</span>
-                        </label>
-                      </div>
-                    </div>
-                    <div className="relative flex items-start">
-                      <div className="flex h-6 items-center">
-                        <input
-                          id="dao"
-                          aria-describedby="dao-description"
-                          name="dao"
-                          type="checkbox"
-                          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                        />
-                      </div>
-                      <div className="ml-3 text-sm leading-6">
-                        <label
-                          htmlFor="dao"
-                          className="font-thin text-zinc-300"
-                        >
-                          DAOs & Network States{' '}
-                          <span className="text-zinc-400">(2)</span>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </fieldset>
-              </div>
-              <div className="">
-                <h5 className="mb-3 text-zinc-100">Superteam Country</h5>
-                <fieldset>
-                  <div className="space-y-2">
-                    <div className="relative flex items-start">
-                      <div className="flex h-6 items-center">
-                        <input
-                          id="comments"
-                          aria-describedby="comments-description"
-                          name="comments"
-                          type="checkbox"
-                          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                        />
-                      </div>
-                      <div className="ml-3 text-sm leading-6">
-                        <label
-                          htmlFor="comments"
-                          className="font-thin text-zinc-300"
-                        >
-                          India <span className="text-zinc-400">(22)</span>
-                        </label>
-                      </div>
-                    </div>
-                    <div className="relative flex items-start">
-                      <div className="flex h-6 items-center">
-                        <input
-                          id="candidates"
-                          aria-describedby="candidates-description"
-                          name="candidates"
-                          type="checkbox"
-                          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                        />
-                      </div>
-                      <div className="ml-3 text-sm leading-6">
-                        <label
-                          htmlFor="candidates"
-                          className="font-thin text-zinc-300"
-                        >
-                          Turkey <span className="text-zinc-400">(7)</span>
-                        </label>
-                      </div>
-                    </div>
-                    <div className="relative flex items-start">
-                      <div className="flex h-6 items-center">
-                        <input
-                          id="offers"
-                          aria-describedby="offers-description"
-                          name="offers"
-                          type="checkbox"
-                          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                        />
-                      </div>
-                      <div className="ml-3 text-sm leading-6">
-                        <label
-                          htmlFor="offers"
-                          className="font-thin text-zinc-300"
-                        >
-                          Vietnam <span className="text-zinc-400">(4)</span>
-                        </label>
-                      </div>
-                    </div>
-                    <div className="relative flex items-start">
-                      <div className="flex h-6 items-center">
-                        <input
-                          id="consumer"
-                          aria-describedby="consumer-description"
-                          name="consumer"
-                          type="checkbox"
-                          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                        />
-                      </div>
-                      <div className="ml-3 text-sm leading-6">
-                        <label
-                          htmlFor="consumer"
-                          className="font-thin text-zinc-300"
-                        >
-                          Germany <span className="text-zinc-400">(9)</span>
-                        </label>
-                      </div>
-                    </div>
-                    <div className="relative flex items-start">
-                      <div className="flex h-6 items-center">
-                        <input
-                          id="tools"
-                          aria-describedby="tools-description"
-                          name="tools"
-                          type="checkbox"
-                          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                        />
-                      </div>
-                      <div className="ml-3 text-sm leading-6">
-                        <label
-                          htmlFor="tools"
-                          className="font-thin text-zinc-300"
-                        >
-                          Mexico <span className="text-zinc-400">(4)</span>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </fieldset>
-              </div>
+            <div className="hidden w-1/3 md:block">
+              <Filters filters={filters} setFilters={setFilters} />
             </div>
           </div>
         </div>

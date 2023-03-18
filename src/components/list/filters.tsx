@@ -45,6 +45,7 @@ const Filters = ({ filters, setFilters }: FiltersProps) => {
                       id={option.id}
                       aria-describedby={`${option.id}-description`}
                       name={option.id}
+                      disabled={!option.count}
                       type="checkbox"
                       className="h-4 w-4 rounded border-gray-300 text-superteam-secondary focus:ring-superteam-secondary-light"
                     />
@@ -52,7 +53,11 @@ const Filters = ({ filters, setFilters }: FiltersProps) => {
                   <div className="ml-3 text-sm leading-6">
                     <label
                       htmlFor={option.id}
-                      className="font-thin text-zinc-300"
+                      className={`font-thin text-zinc-300 disabled:cursor-not-allowed disabled:font-thin disabled:text-zinc-900 ${
+                        option.count
+                          ? 'cursor-pointer  hover:font-bold hover:text-zinc-100 '
+                          : ''
+                      }`}
                     >
                       {option.id}{' '}
                       <span className="text-zinc-400">({option.count})</span>

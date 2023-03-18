@@ -19,10 +19,6 @@ const List = () => {
     const trueFilters = filters
       .map((f) => {
         const trueOptions = f.options.filter((o) => o.isSelected);
-        console.log(
-          'file: list.tsx:21 ~ trueFilters ~ trueOptions:',
-          trueOptions
-        );
         if (trueOptions.length) {
           return {
             ...f,

@@ -6,7 +6,7 @@ type SearchProps = {
 const Search = ({ setSearchText, searchText }: SearchProps) => {
   return (
     <div className="flex items-center justify-between pt-8 pb-4">
-      <div className="relative mt-2 rounded-md shadow-md shadow-zinc-800/5">
+      <div className="relative w-full rounded-md shadow-md shadow-zinc-800/5 md:w-auto">
         <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"

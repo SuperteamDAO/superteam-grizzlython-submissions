@@ -5,6 +5,7 @@ import { responses } from '@/utils/responses';
 
 import Card from './card';
 import Filters from './filters';
+import Search from './search';
 
 const List = () => {
   const [filteredResponses, setFilteredResponses] = useState(
@@ -14,8 +15,28 @@ const List = () => {
   );
   const initializedFilters = initFilters(responses);
   const [filters, setFilters] = useState(initializedFilters);
+  const [searchText, setSearchText] = useState('');
 
   useEffect(() => {
+    // Apply search
+    const searchedResponses = !searchText
+      ? responses
+      : responses.filter(
+          (r) =>
+            (r?.name || '').toLowerCase().indexOf(searchText.toLowerCase()) >=
+              0 ||
+            (r?.description || '')
+              .toLowerCase()
+              .indexOf(searchText.toLowerCase()) >= 0 ||
+            (r?.teamLeadName || '')
+              .toLowerCase()
+              .indexOf(searchText.toLowerCase()) >= 0 ||
+            (r?.teamMembersNames || '')
+              .toLowerCase()
+              .indexOf(searchText.toLowerCase()) >= 0
+        );
+
+    // Apply filters
     const trueFilters = filters
       .map((f) => {
         const trueOptions = f.options.filter((o) => o.isSelected);
@@ -29,7 +50,7 @@ const List = () => {
       })
       .filter((f) => !!f);
     if (!trueFilters.length) {
-      const changedResponses = responses?.sort((a, b) =>
+      const changedResponses = searchedResponses?.sort((a, b) =>
         a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1
       );
       setFilteredResponses(changedResponses);
@@ -41,7 +62,7 @@ const List = () => {
         ?.find((tf) => tf?.id === 'superteamMember')
         ?.options?.map((o) => o.id);
 
-      const changedResponses = responses
+      const changedResponses = searchedResponses
         ?.filter((r) => {
           const isTrack = trackOptions?.length
             ? !!trackOptions.find((t) => r?.track?.indexOf(t) >= 0)
@@ -58,7 +79,7 @@ const List = () => {
         );
       setFilteredResponses(changedResponses);
     }
-  }, [filters]);
+  }, [filters, searchText]);
 
   return (
     <div className="w-full sm:px-8">
@@ -73,7 +94,8 @@ const List = () => {
                   : responses?.length}
                 )
               </h1>
-              <ul className="py-8">
+              <Search searchText={searchText} setSearchText={setSearchText} />
+              <ul className="pb-8">
                 {filteredResponses.map((response) => (
                   <Card response={response} key={response.order} />
                 ))}

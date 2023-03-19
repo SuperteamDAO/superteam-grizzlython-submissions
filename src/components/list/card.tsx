@@ -1,6 +1,6 @@
+import { Tooltip } from '@geist-ui/core';
 import { useRouter } from 'next/router';
 
-// import { Tooltip } from 'react-tooltip';
 import type { Response } from '@/utils/responses';
 
 type CardProps = {
@@ -57,15 +57,19 @@ const Card = ({ response }: CardProps) => {
               >
                 {response.name}
               </a>
-              <span className="ml-2" data-tooltip-id={response?.name}>
-                {flag}
-              </span>
-              {/* <Tooltip id={response?.name} place="right">
-                <p className="text-center font-sans text-xs">
-                  Project from <br />
-                  Superteam {response?.superteamMember}
-                </p>
-              </Tooltip> */}
+              <Tooltip
+                text={
+                  <span className="font-sans text-sm">
+                    Project from Superteam {response?.superteamMember}
+                  </span>
+                }
+                placement="right"
+                type="dark"
+              >
+                <span className="ml-2" data-tooltip-id={response?.name}>
+                  {flag}
+                </span>
+              </Tooltip>
             </div>
             {response?.demoUrl && (
               <div className="flex items-center justify-end">

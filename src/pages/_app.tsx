@@ -1,6 +1,6 @@
 import '../styles/global.css';
-import 'react-tooltip/dist/react-tooltip.css';
 
+// import 'react-tooltip/dist/react-tooltip.css';
 import { Analytics } from '@vercel/analytics/react';
 import type { AppProps } from 'next/app';
 

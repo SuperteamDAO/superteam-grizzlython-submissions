@@ -5,6 +5,7 @@ import { responses } from '@/utils/responses';
 
 import Card from './card';
 import Filters from './filters';
+import Search from './search';
 
 const List = () => {
   const [filteredResponses, setFilteredResponses] = useState(
@@ -73,7 +74,8 @@ const List = () => {
                   : responses?.length}
                 )
               </h1>
-              <ul className="py-8">
+              <Search setFilteredResponses={setFilteredResponses} />
+              <ul className="pb-8">
                 {filteredResponses.map((response) => (
                   <Card response={response} key={response.order} />
                 ))}

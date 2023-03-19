@@ -5,6 +5,7 @@ import { responses } from '@/utils/responses';
 
 import Card from './card';
 import Filters from './filters';
+import Pagination from './pagination';
 import Search from './search';
 
 const List = () => {
@@ -116,11 +117,16 @@ const List = () => {
                 setSearchFilters={setSearchFilters}
                 total={totalFilteredCount}
               />
-              <ul className="pb-8">
+              <ul className="">
                 {filteredResponses.map((response) => (
                   <Card response={response} key={response.order} />
                 ))}
               </ul>
+              <Pagination
+                searchFilters={searchFilters}
+                setSearchFilters={setSearchFilters}
+                total={totalFilteredCount}
+              />
             </div>
             <div className="mt-2 hidden w-1/3 pt-24 md:block">
               <Filters

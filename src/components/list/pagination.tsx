@@ -28,10 +28,10 @@ const Pagination = ({
   };
   return (
     <nav
-      className="flex items-center justify-end gap-3"
+      className="flex w-full items-center justify-between gap-3 md:w-auto md:justify-end"
       aria-label="Pagination"
     >
-      <div className="hidden sm:block">
+      <div className="">
         <p className="text-sm font-normal text-zinc-400">
           Showing <span className="font-bold">{page * 10 + 1}</span> -{' '}
           <span className="font-bold">
@@ -40,7 +40,7 @@ const Pagination = ({
           of <span className="font-bold">{total}</span>
         </p>
       </div>
-      <div className="flex flex-1 justify-between sm:justify-end">
+      <div className="flex flex-1 justify-end">
         <button
           type="button"
           onClick={() => setPage(page > 0 ? page - 1 : 0)}

@@ -14,30 +14,38 @@ const List = () => {
     )
   );
   const initializedFilters = initFilters(responses);
-  const [filters, setFilters] = useState(initializedFilters);
-  const [searchText, setSearchText] = useState('');
+  const [searchFilters, setSearchFilters] = useState({
+    page: 0,
+    searchText: '',
+    filters: initializedFilters,
+  });
+  const [totalFilteredCount, setTotalFilteredCount] = useState(
+    responses?.length
+  );
 
   useEffect(() => {
     // Apply search
-    const searchedResponses = !searchText
+    const searchedResponses = !searchFilters.searchText
       ? responses
       : responses.filter(
           (r) =>
-            (r?.name || '').toLowerCase().indexOf(searchText.toLowerCase()) >=
-              0 ||
+            (r?.name || '')
+              .toLowerCase()
+              .indexOf(searchFilters.searchText.toLowerCase()) >= 0 ||
             (r?.description || '')
               .toLowerCase()
-              .indexOf(searchText.toLowerCase()) >= 0 ||
+              .indexOf(searchFilters.searchText.toLowerCase()) >= 0 ||
             (r?.teamLeadName || '')
               .toLowerCase()
-              .indexOf(searchText.toLowerCase()) >= 0 ||
+              .indexOf(searchFilters.searchText.toLowerCase()) >= 0 ||
             (r?.teamMembersNames || '')
               .toLowerCase()
-              .indexOf(searchText.toLowerCase()) >= 0
+              .indexOf(searchFilters.searchText.toLowerCase()) >= 0
         );
 
     // Apply filters
-    const trueFilters = filters
+    let finalResponses = [];
+    const trueFilters = searchFilters.filters
       .map((f) => {
         const trueOptions = f.options.filter((o) => o.isSelected);
         if (trueOptions.length) {
@@ -53,7 +61,8 @@ const List = () => {
       const changedResponses = searchedResponses?.sort((a, b) =>
         a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1
       );
-      setFilteredResponses(changedResponses);
+      finalResponses = changedResponses;
+      // setFilteredResponses(changedResponses);
     } else {
       const trackOptions = trueFilters
         ?.find((tf) => tf?.id === 'track')
@@ -77,9 +86,17 @@ const List = () => {
         ?.sort((a, b) =>
           a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1
         );
-      setFilteredResponses(changedResponses);
+      finalResponses = changedResponses;
+      // setFilteredResponses(changedResponses);
     }
-  }, [filters, searchText]);
+
+    // Apply pagination
+    setTotalFilteredCount(finalResponses.length);
+    console.log('file: list.tsx:20 ~ List ~ page:', searchFilters.page);
+    const from = searchFilters.page * 10;
+    const to = searchFilters.page * 10 + 10;
+    setFilteredResponses(finalResponses.slice(from, to));
+  }, [searchFilters]);
 
   return (
     <div className="w-full sm:px-8">
@@ -94,7 +111,11 @@ const List = () => {
                   : responses?.length}
                 )
               </h1>
-              <Search searchText={searchText} setSearchText={setSearchText} />
+              <Search
+                searchFilters={searchFilters}
+                setSearchFilters={setSearchFilters}
+                total={totalFilteredCount}
+              />
               <ul className="pb-8">
                 {filteredResponses.map((response) => (
                   <Card response={response} key={response.order} />
@@ -102,7 +123,10 @@ const List = () => {
               </ul>
             </div>
             <div className="mt-2 hidden w-1/3 pt-24 md:block">
-              <Filters filters={filters} setFilters={setFilters} />
+              <Filters
+                searchFilters={searchFilters}
+                setSearchFilters={setSearchFilters}
+              />
             </div>
           </div>
         </div>

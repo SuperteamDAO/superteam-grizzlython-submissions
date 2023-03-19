@@ -1,13 +1,17 @@
 import type { Filter } from '@/utils/filters';
 
 type FiltersProps = {
-  filters?: Array<Filter>;
-  setFilters: any;
+  searchFilters: {
+    page: number;
+    searchText: string;
+    filters?: Array<Filter>;
+  };
+  setSearchFilters: any;
 };
 
-const Filters = ({ filters, setFilters }: FiltersProps) => {
+const Filters = ({ searchFilters, setSearchFilters }: FiltersProps) => {
   const toggleChange = (filterId: string, optionId: string) => {
-    const changedFilters = filters?.map((f) => {
+    const changedFilters = searchFilters.filters?.map((f) => {
       if (f.id === filterId) {
         const options = f?.options?.map((o) => {
           if (o.id === optionId) {
@@ -25,11 +29,15 @@ const Filters = ({ filters, setFilters }: FiltersProps) => {
       }
       return f;
     });
-    setFilters(changedFilters);
+    setSearchFilters({
+      page: 0,
+      searchText: searchFilters.searchText,
+      filters: changedFilters,
+    });
   };
 
   const removeFilters = () => {
-    const changedFilters = filters?.map((f) => {
+    const changedFilters = searchFilters.filters?.map((f) => {
       const options = f?.options?.map((o) => ({
         ...o,
         isSelected: false,
@@ -39,7 +47,11 @@ const Filters = ({ filters, setFilters }: FiltersProps) => {
         options,
       };
     });
-    setFilters(changedFilters);
+    setSearchFilters({
+      page: 0,
+      searchText: searchFilters.searchText,
+      filters: changedFilters,
+    });
   };
 
   return (
@@ -53,9 +65,11 @@ const Filters = ({ filters, setFilters }: FiltersProps) => {
           Clear All
         </button>
       </div>
-      {filters?.map((filter, filterIndex) => (
+      {searchFilters.filters?.map((filter, filterIndex) => (
         <div
-          className={filterIndex < filters.length - 1 ? 'mb-6' : ''}
+          className={
+            filterIndex < (searchFilters.filters?.length || 0) - 1 ? 'mb-6' : ''
+          }
           key={filterIndex}
         >
           <h5 className="mb-3 text-zinc-100">{filter.name}</h5>

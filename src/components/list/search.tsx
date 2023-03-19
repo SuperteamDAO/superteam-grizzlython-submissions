@@ -1,12 +1,28 @@
+import type { Filter } from '@/utils/filters';
+
+import Pagination from './pagination';
+
 type SearchProps = {
-  setSearchText: any;
-  searchText: string;
+  searchFilters: {
+    page: number;
+    searchText: string;
+    filters?: Array<Filter>;
+  };
+  setSearchFilters: any;
+  total: number;
 };
 
-const Search = ({ setSearchText, searchText }: SearchProps) => {
+const Search = ({ searchFilters, setSearchFilters, total }: SearchProps) => {
+  const setText = (text: string) => {
+    setSearchFilters({
+      page: 0,
+      searchText: text,
+      filters: searchFilters.filters,
+    });
+  };
   return (
     <div className="flex items-center justify-between pt-8 pb-4">
-      <div className="relative w-full rounded-md shadow-md shadow-zinc-800/5 md:w-auto">
+      <div className="relative w-full rounded-md shadow-md shadow-zinc-800/5 hover:bg-zinc-800 md:w-auto">
         <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -22,16 +38,16 @@ const Search = ({ setSearchText, searchText }: SearchProps) => {
           </svg>
         </div>
         <input
-          onChange={(e) => setSearchText(e.target.value)}
+          onChange={(e) => setText(e.target.value)}
           type="input"
-          value={searchText}
+          value={searchFilters.searchText}
           className="block w-full rounded-md border border-zinc-700 bg-zinc-700/[0.15] py-[calc(theme(spacing.2)-1px)] px-10 text-zinc-200 placeholder:text-zinc-500 focus:border-zinc-500 focus:outline-none sm:text-sm"
           placeholder="Search projects..."
         />
-        {!!searchText && (
+        {!!searchFilters.searchText && (
           <div className="absolute inset-y-0 right-0 flex items-center pr-3">
             <svg
-              onClick={() => setSearchText('')}
+              onClick={() => setText('')}
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -48,6 +64,11 @@ const Search = ({ setSearchText, searchText }: SearchProps) => {
           </div>
         )}
       </div>
+      <Pagination
+        searchFilters={searchFilters}
+        setSearchFilters={setSearchFilters}
+        total={total}
+      />
     </div>
   );
 };

@@ -38,9 +38,9 @@ const Card = ({ response }: CardProps) => {
       <div className="flex w-full justify-start">
         <div className="shrink-0">
           <img
-            className="h-9 w-9 rounded-full md:h-12 md:w-12"
+            className="h-9 w-9 rounded-full border border-zinc-700 md:h-12 md:w-12"
             src={
-              response?.logoUrl ??
+              response?.logoUrl ||
               `${router.basePath}/assets/images/profile-picture.png`
             }
             alt={response.name}
@@ -81,16 +81,11 @@ const Card = ({ response }: CardProps) => {
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
                     viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
+                    fill="currentColor"
                     className="mr-1 h-4 w-4"
                   >
-                    <path
-                      strokeLinecap="round"
-                      d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"
-                    />
+                    <path d="M6 3a3 3 0 00-3 3v1.5a.75.75 0 001.5 0V6A1.5 1.5 0 016 4.5h1.5a.75.75 0 000-1.5H6zM16.5 3a.75.75 0 000 1.5H18A1.5 1.5 0 0119.5 6v1.5a.75.75 0 001.5 0V6a3 3 0 00-3-3h-1.5zM12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zM4.5 16.5a.75.75 0 00-1.5 0V18a3 3 0 003 3h1.5a.75.75 0 000-1.5H6A1.5 1.5 0 014.5 18v-1.5zM21 16.5a.75.75 0 00-1.5 0V18a1.5 1.5 0 01-1.5 1.5h-1.5a.75.75 0 000 1.5H18a3 3 0 003-3v-1.5z" />
                   </svg>
                   View Demo
                 </a>

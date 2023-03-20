@@ -8,22 +8,14 @@ const Header = () => {
       <div className="mx-auto w-full max-w-7xl lg:px-8">
         <div className="relative w-full">
           <div className="h-64 bg-gradient-to-t from-[#5522e0_-126.34%] md:h-128 lg:to-[rgba(0,0,0,0)_82.81%]">
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center pt-4">
               <img
-                className="h-24 w-auto md:h-48"
+                className="h-32 w-auto md:h-72"
                 src={`${router.basePath}/assets/images/superteam-logo-white.png`}
                 alt="Superteam"
               />
-              <div className="px-8 text-2xl font-thin text-white md:text-4xl">
-                X
-              </div>
-              <img
-                className="h-40 w-auto md:h-80"
-                src={`${router.basePath}/assets/images/grizzlython-logo-white.png`}
-                alt="Solana Grizzlython"
-              />
             </div>
-            <div className="-mt-6 flex items-center justify-center md:-mt-12">
+            <div className="flex items-center justify-center">
               <p className="z-10 m-0 text-center text-lg  font-thin text-zinc-100 md:text-3xl">
                 Explore all the{' '}
                 <span className="font-bold text-grizzlython-red">

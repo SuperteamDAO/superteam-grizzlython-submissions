@@ -106,10 +106,7 @@ const List = () => {
         <div className="relative w-full p-6 md:p-8">
           <div className="flex w-full justify-between gap-6 md:gap-8">
             <div className="w-full">
-              <h1 className="mb-5 text-2xl font-bold tracking-tight text-zinc-100 sm:text-5xl">
-                Submissions ({responses?.length})
-              </h1>
-              <div className="mb-2 w-full md:hidden">
+              <div className="w-full md:hidden">
                 <MobileFilters
                   searchFilters={searchFilters}
                   setSearchFilters={setSearchFilters}
@@ -131,7 +128,7 @@ const List = () => {
                 total={totalFilteredCount}
               />
             </div>
-            <div className="hidden w-1/3 pt-36 md:block">
+            <div className="mt-1 hidden w-1/3 pt-12 md:block">
               <div className="rounded border border-zinc-700 bg-zinc-800 px-2 py-3 md:px-6 md:py-4">
                 <Filters
                   searchFilters={searchFilters}

@@ -21,7 +21,7 @@ const Search = ({ searchFilters, setSearchFilters, total }: SearchProps) => {
     });
   };
   return (
-    <div className="flex flex-col items-center justify-between gap-3 pt-8 pb-4 md:flex-row md:gap-0">
+    <div className="flex flex-col items-center justify-between gap-3 pb-4 md:flex-row md:gap-0">
       <div className="relative w-full rounded-md shadow-md shadow-zinc-800/5 hover:bg-zinc-800 md:w-auto">
         <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
           <svg

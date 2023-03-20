@@ -55,7 +55,7 @@ const Filters = ({ searchFilters, setSearchFilters }: FiltersProps) => {
   };
 
   return (
-    <div className="rounded border border-zinc-700 bg-zinc-800 px-2 py-3 md:px-6 md:py-4">
+    <>
       <div className="flex items-center justify-end">
         <button
           type="button"
@@ -108,7 +108,7 @@ const Filters = ({ searchFilters, setSearchFilters }: FiltersProps) => {
           </fieldset>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 

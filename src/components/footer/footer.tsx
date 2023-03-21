@@ -95,7 +95,7 @@ const Footer = () => {
                   rel="noreferrer"
                   className="text-zinc-600 hover:underline"
                 >
-                  You skimmed this, didn&apos;t you?
+                  Made with ❤️ using something with a fruit on it!
                 </a>
               </p>
             </div>

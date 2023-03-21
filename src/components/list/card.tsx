@@ -33,6 +33,19 @@ const Card = ({ response }: CardProps) => {
 
   const tracks = (response?.track || '').split(',');
 
+  let logoUrl = response?.logoUrl || '';
+  if (logoUrl.indexOf('drive.google.com') >= 0) {
+    const split1 = logoUrl.split('/d/');
+    console.log('file: card.tsx:39 ~ Card ~ split1:', split1);
+    if (split1?.length === 2) {
+      const split2 = split1[1]?.split('/view');
+      console.log('file: card.tsx:42 ~ Card ~ split2:', split2);
+      if (split2 && split2?.length >= 2) {
+        logoUrl = `https://drive.google.com/uc?export=view&id=${split2[0]}`;
+      }
+    }
+  }
+
   return (
     <li className="mb-6 w-full rounded-md border border-zinc-700 bg-zinc-800 px-2 py-3 md:px-6 md:py-4">
       <div className="flex w-full justify-start">
@@ -40,8 +53,7 @@ const Card = ({ response }: CardProps) => {
           <img
             className="h-9 w-9 rounded-full border border-zinc-700 md:h-12 md:w-12"
             src={
-              response?.logoUrl ||
-              `${router.basePath}/assets/images/profile-picture.png`
+              logoUrl || `${router.basePath}/assets/images/profile-picture.png`
             }
             alt={response.name}
           />

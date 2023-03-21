@@ -54,7 +54,7 @@ const Footer = () => {
       <div className="mx-auto w-full max-w-7xl lg:px-8">
         <div className="relative w-full">
           <footer className="bg-zinc-900">
-            <div className="mx-auto max-w-7xl overflow-hidden py-20 px-6 sm:py-24 lg:px-8">
+            <div className="mx-auto max-w-7xl overflow-hidden px-6 pt-12 pb-6 lg:px-8">
               <nav
                 className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12"
                 aria-label="Footer"
@@ -87,7 +87,16 @@ const Footer = () => {
                 ))}
               </div>
               <p className="mt-10 text-center text-xs leading-5 text-gray-500">
-                &copy; 2023 Superteam. All rights reserved.
+                &copy; 2023 Superteam. All rights reserved. <br />
+                <br />
+                <a
+                  href="https://twitter.com/thecryptodiver"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-zinc-600 hover:underline"
+                >
+                  You skimmed this, didn&apos;t you?
+                </a>
               </p>
             </div>
           </footer>

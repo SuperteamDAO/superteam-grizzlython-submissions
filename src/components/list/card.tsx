@@ -36,10 +36,8 @@ const Card = ({ response }: CardProps) => {
   let logoUrl = response?.logoUrl || '';
   if (logoUrl.indexOf('drive.google.com') >= 0) {
     const split1 = logoUrl.split('/d/');
-    console.log('file: card.tsx:39 ~ Card ~ split1:', split1);
     if (split1?.length === 2) {
       const split2 = split1[1]?.split('/view');
-      console.log('file: card.tsx:42 ~ Card ~ split2:', split2);
       if (split2 && split2?.length >= 2) {
         logoUrl = `https://drive.google.com/uc?export=view&id=${split2[0]}`;
       }

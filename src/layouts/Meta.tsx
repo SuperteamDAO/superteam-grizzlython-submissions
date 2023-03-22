@@ -60,9 +60,7 @@ const Meta = (props: IMetaProps) => {
           site_name: AppConfig.site_name,
           images: [
             {
-              url: `${router.basePath}/assets/images/site-image.png`,
-              width: 1200,
-              height: 628,
+              url: 'https://grizz.superteam.fun/assets/images/site-image.png',
               alt: props.title,
             },
           ],

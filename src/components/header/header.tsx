@@ -17,13 +17,13 @@ const Header = () => {
             </div>
             <div className="flex items-center justify-center">
               <p className="z-10 m-0 text-center text-lg  font-thin text-zinc-100 md:text-3xl">
-                Explore all the{' '}
+                Explore a curated list of <br />
                 <span className="font-bold text-grizzlython-red">
                   Grizzlython
-                </span>
+                </span>{' '}
+                hackathon submissions
                 <br />
-                hackathon submissions made by
-                <br />
+                made by{' '}
                 <span className="font-bold text-superteam-secondary">
                   Superteam
                 </span>{' '}

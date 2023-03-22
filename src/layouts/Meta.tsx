@@ -51,12 +51,26 @@ const Meta = (props: IMetaProps) => {
         title={`${props.title}`}
         description={props.description}
         canonical={props.canonical}
+        themeColor="#5522e0"
         openGraph={{
           title: props.title,
           description: props.description,
           url: props.canonical,
           locale: AppConfig.locale,
           site_name: AppConfig.site_name,
+          images: [
+            {
+              url: `${router.basePath}/assets/images/site-image.png`,
+              width: 1200,
+              height: 628,
+              alt: props.title,
+            },
+          ],
+        }}
+        twitter={{
+          handle: '@thecryptodiver',
+          site: '@SuperteamDAO',
+          cardType: 'summary_large_image',
         }}
       />
     </>

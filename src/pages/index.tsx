@@ -10,7 +10,7 @@ const Home = () => {
       meta={
         <Meta
           title="Superteam Submissions | Grizzlython Hackathon"
-          description="Explore all the submissions for Grizzlython hackathon by Superteam members"
+          description="Explore a curated list of Grizzlython hackathon submissions made by Superteam members"
         />
       }
     >

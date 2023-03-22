@@ -90,6 +90,15 @@ const Footer = () => {
                 &copy; 2023 Superteam. All rights reserved. <br />
                 <br />
                 <a
+                  href="https://github.com/superteamdao/superteam-grizzython-submissions/issues/new"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-zinc-600 hover:underline"
+                >
+                  If you find any issues, please let us know here.
+                </a>
+                <br />
+                <a
                   href="https://twitter.com/thecryptodiver"
                   target="_blank"
                   rel="noreferrer"

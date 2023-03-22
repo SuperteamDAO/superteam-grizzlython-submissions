@@ -1,5 +1,5 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://superteam-grizzython-submissions.vercel.app',
+  siteUrl: 'https://grizz.superteam.fun',
   generateRobotsTxt: true,
 };

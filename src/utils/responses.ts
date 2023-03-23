@@ -1326,6 +1326,196 @@ export const responses: Array<Response> = [
   },
   {
     order: 52,
+    createdAt: '3/22/2023 11:50:20',
+    email_id: 'andresaguilar.exe@gmail.com',
+    name: 'EzTicket',
+    description:
+      'We are creating NFTickets for events and a platform for create and manage events',
+    logoUrl: '',
+    productUrl: 'https://ezticket.vercel.app/',
+    codeUrl: 'https://github.com/Avzolem/ezticket',
+    projectUrls: '',
+    teamLeadName: 'Andrés Aguilar',
+    teamLeadEmail: 'andresaguilar.exe@gmail.com',
+    teamLeadSocialUrl: 'instagram.com/avsolem twitter.com/avsolem',
+    teamMembersNames: 'Ramon Najera',
+    teamMembersEmails: 'rnajera@uach.mx',
+    teamMembersSocialUrls: '',
+    teamLeadDiscordId: '',
+    teamMembersDiscordIds: '',
+    track: 'Mobile, Payments, Consumer',
+    demoUrl: 'https://ezticket.vercel.app/slideck',
+    category: '',
+    superteamMember: 'Mexico',
+  },
+  {
+    order: 53,
+    createdAt: '3/22/2023 17:17:21',
+    email_id: 'atahan03@hotmail.com',
+    name: 'SCOFL',
+    description:
+      'SCOFL is a platform that merges freelancer system and fundraising system.You can fund projects you liked or you can complate tasks as developer to contribute the project. ',
+    logoUrl:
+      'https://drive.google.com/file/d/1_iY1t0VteOIuh6DCXZFbXBRi8QHojAFd/view',
+    productUrl: '',
+    codeUrl: 'https://github.com/atahanyild/SCOFL',
+    projectUrls: '',
+    teamLeadName: 'Atahan YILDIRIM',
+    teamLeadEmail: 'atahan03@hotmail.com',
+    teamLeadSocialUrl: 'https://www.linkedin.com/in/atahan-yıldırım-1075831b1/',
+    teamMembersNames: 'Ediz ZÜM,Hasan Kutay SARI,Emin KOTAN',
+    teamMembersEmails:
+      'ediz.zum@hotmail.com,h.kutay.1@gmail.com,eminkotan@gmail.com',
+    teamMembersSocialUrls:
+      'https://www.linkedin.com/in/ediz-zum/,https://www.linkedin.com/in/hasan-kutay-sarı-0a5048223/,https://www.linkedin.com/in/eminkotan/',
+    teamLeadDiscordId: '',
+    teamMembersDiscordIds: '',
+    track:
+      'Mobile, DeFi, Payments, Consumer, Tools & Infrastructure, Gaming, DAOs and Network States',
+    demoUrl: 'https://www.loom.com/share/3a189fd069e7478fadbb46a1e424f114',
+    category: '',
+    superteamMember: 'Turkey',
+  },
+  {
+    order: 54,
+    createdAt: '3/22/2023 17:16:39',
+    email_id: 'atahan03@hotmail.com',
+    name: 'SMACOFL',
+    description:
+      'SMACOFL provides Freelancer developers and Project owners to find each other.This is a decentrealized alternative to traditional websites because smart contract runs the system instead of middleman.',
+    logoUrl:
+      'https://drive.google.com/file/d/14y1b9xnRP19NG5urY8NSmoRXRDS-pf4H/view',
+    productUrl: '',
+    codeUrl: 'https://github.com/atahanyild/SMACOFL',
+    projectUrls: '',
+    teamLeadName: 'Atahan Yıldırım',
+    teamLeadEmail: 'atahan03@hotmail.com',
+    teamLeadSocialUrl: 'https://www.linkedin.com/in/atahan-yıldırım-1075831b1/',
+    teamMembersNames: 'Ediz Züm,Hasan Kutay Sarı,Emin Kotan',
+    teamMembersEmails:
+      'ediz.zum@hotmail.com,h.kutay.1@gmail.com,eminkotan@gmail.com',
+    teamMembersSocialUrls:
+      'https://www.linkedin.com/in/ediz-zum/,https://www.linkedin.com/in/hasan-kutay-sarı-0a5048223/,https://www.linkedin.com/in/eminkotan/',
+    teamLeadDiscordId: '',
+    teamMembersDiscordIds: '',
+    track:
+      'Mobile, DeFi, Payments, Consumer, Tools & Infrastructure, Gaming, DAOs and Network States',
+    demoUrl: 'https://www.loom.com/share/58bae4af77aa410492e13eee6f0d8582',
+    category: '',
+    superteamMember: 'Turkey',
+  },
+  {
+    order: 55,
+    createdAt: '3/22/2023 19:22:57',
+    email_id: 'adamborcany@gmail.com',
+    name: 'SolLightning',
+    description:
+      'Buliding trustless bridge between Solana and Bitcoin (on-chain and lightning network) to allow anyone to receive and send bitcoin from/to their solana wallet!',
+    logoUrl:
+      'https://drive.google.com/file/d/1srN-_-xYXqfRoYu1JXph81kCwwVrSZts/view',
+    productUrl: '',
+    codeUrl: 'https://github.com/adambor/SolLightning-readme',
+    projectUrls: '',
+    teamLeadName: 'Adam Borčány',
+    teamLeadEmail: 'adamborcany@gmail.com',
+    teamLeadSocialUrl:
+      'https://www.linkedin.com/in/adam-bor%C4%8D%C3%A1ny-151176165/',
+    teamMembersNames: 'Adam Borčány,Sylvie Durach,Caspar Huisman',
+    teamMembersEmails:
+      'adamborcany@gmail.com,sylvie@gethopa.com,caspar@gethopa.com',
+    teamMembersSocialUrls:
+      'https://www.linkedin.com/in/adam-bor%C4%8D%C3%A1ny-151176165/,https://www.linkedin.com/in/sylviadurach/,https://www.linkedin.com/in/casparhuisman/',
+    teamLeadDiscordId: '',
+    teamMembersDiscordIds: '',
+    track: 'Mobile, DeFi, Payments, Tools & Infrastructure',
+    demoUrl: 'https://www.youtube.com/watch?v=ennMMSyMooA',
+    category: '',
+    superteamMember: 'Germany',
+  },
+  {
+    order: 56,
+    createdAt: '3/23/2023 10:44:35',
+    email_id: 'zang@stormgate.io',
+    name: 'Walless',
+    description:
+      'Walless is the first web3 sandbox-wallet with embedded dApps, simplified onboarding, unified cross-chain interface. This revolutionizes crypto wallets and enables endless possibilities for builders.',
+    logoUrl:
+      'https://drive.google.com/file/d/1z3Qk5vVyAJlbvsK92V9Ohosn6LD6uuMM/view',
+    productUrl: 'https://walless.io/',
+    codeUrl: 'https://github.com/cocrafts/walless',
+    projectUrls: '',
+    teamLeadName: 'Son Le',
+    teamLeadEmail: 'atem@stormgate.io',
+    teamLeadSocialUrl: 'https://www.linkedin.com/in/cloudle/',
+    teamMembersNames:
+      'Zang,Linh Pham,Tuan Tran,Chloe Keith,Tan Le,Hieu Nguyen,Minh Pham',
+    teamMembersEmails:
+      'zang@stormgate.io,linhpham.ptdl@gmail.com,1414439@gmail.com,lhngoc115@gmail.com,tanlethanh8266@gmail.com,dev.ngtronghieu@gmail.com,hadtnt71@gmail.com',
+    teamMembersSocialUrls:
+      'https://www.linkedin.com/in/giangdang0115/,https://www.linkedin.com/in/linh-pham-ptdl/,https://www.linkedin.com/in/tuan-tran-fme849/,https://www.linkedin.com/in/chloe-ngoc-396440185/,https://www.linkedin.com/in/tanlethanh,https://www.linkedin.com/in/devtronghieu,https://www.linkedin.com/in/minh-pham-13a31922a/',
+    teamLeadDiscordId: '',
+    teamMembersDiscordIds: '',
+    track: 'Tools & Infrastructure',
+    demoUrl: 'https://www.youtube.com/watch?v=_8NZZKDQ5hM&t=2s',
+    category: '',
+    superteamMember: 'Vietnam',
+  },
+  {
+    order: 57,
+    createdAt: '3/23/2023 1:54:37',
+    email_id: 'team@jimsim.io',
+    name: 'JimSim',
+    description:
+      'DeFi Yield Analytics Platform - Analyze historic performance and risk metrics of any yield product that has an APY metric',
+    logoUrl:
+      'https://drive.google.com/file/d/1hTYmgYKxJkC-kvoE6rczL24XXLZdjrF7/view',
+    productUrl: 'jimsim.io',
+    codeUrl: '(only accessible to judges)',
+    projectUrls: '',
+    teamLeadName: 'Pierre Martinow',
+    teamLeadEmail: 'team@jimsim.io',
+    teamLeadSocialUrl: 'https://t.me/DeFi_Koopman',
+    teamMembersNames: 'Mo, Vlad, Ali, Barbossa, Paddy',
+    teamMembersEmails:
+      'sophiesivolap@gmail.com,a.honari@danalytica.com,vladhgost@gmail.com,anvandel@proton.me,paddy@chaindna.io,scderya@gmail.com',
+    teamMembersSocialUrls:
+      'https://twitter.com/mo_solah,https://twitter.com/CryptoBarbossa,https://twitter.com/syvolape,https://twitter.com/chaindna_io,https://twitter.com/SocioCrypto,https://twitter.com/VladPozniakov',
+    teamLeadDiscordId: '',
+    teamMembersDiscordIds: '',
+    track: 'DeFi, Tools & Infrastructure',
+    demoUrl: 'demo.jimsim.io',
+    category: '',
+    superteamMember: 'Turkey',
+  },
+  {
+    order: 58,
+    createdAt: '3/23/2023 3:08:17',
+    email_id: 'antonio.figueroa@loadtrail.com',
+    name: 'Vote.ly',
+    description:
+      'An innovative blockchain-based platform that leverages decentralized storage to enhance the security, transparency, and accuracy of surveys.',
+    logoUrl:
+      'https://drive.google.com/file/d/18zjoLgIn59nf2uHHid8auMFFF-PrG5VR/view',
+    productUrl: '',
+    codeUrl: 'https://github.com/Sitka-ken/votely',
+    projectUrls: '',
+    teamLeadName: 'Antonio Figueroa Gonzalez',
+    teamLeadEmail: 'antoniofigueroa545@gmail.com',
+    teamLeadSocialUrl: 'https://es-la.facebook.com/yamiSitka',
+    teamMembersNames:
+      'Ami Evelyn Saenz Banda,Luis Mario Sandoval Gonzalez,Jose Angel Flores Gutiérrez,Ever Leonardo Chavira Vega,Daniel Omar Caraveo Falcon',
+    teamMembersEmails:
+      'a_evelyn2023@hotmail.com,19610660@itcdcuauhtemoc.edu.mx,LC19610676@cdcuauhtemoc.tecnm.mx,Leonardo362@live.com,caraveofalcon@gmail.com',
+    teamMembersSocialUrls: '',
+    teamLeadDiscordId: '',
+    teamMembersDiscordIds: '',
+    track: 'Consumer, Tools & Infrastructure',
+    demoUrl: 'https://youtube.com/watch?v=ImSaE8xxLpE&si=EnSIkaIECMiOmarE',
+    category: '',
+    superteamMember: 'Mexico',
+  },
+  {
+    order: 59,
     createdAt: '',
     email_id: 'heyaabis@gmail.com',
     name: 'SOL Trek',
@@ -1349,7 +1539,7 @@ export const responses: Array<Response> = [
     superteamMember: 'India',
   },
   {
-    order: 53,
+    order: 60,
     createdAt: '',
     email_id: 'mahajan13osheen@gmail.com',
     name: 'Saganize',
@@ -1375,7 +1565,7 @@ export const responses: Array<Response> = [
     superteamMember: 'India',
   },
   {
-    order: 54,
+    order: 61,
     createdAt: '',
     email_id: 'sahilpal67@gmail.com',
     name: 'Land deeds on blockchain as NFTs',
@@ -1401,7 +1591,7 @@ export const responses: Array<Response> = [
     superteamMember: 'India',
   },
   {
-    order: 55,
+    order: 62,
     createdAt: '',
     email_id: 'atlantian001@dropchain.in',
     name: 'Atlantis DAO',
@@ -1427,7 +1617,7 @@ export const responses: Array<Response> = [
     superteamMember: 'India',
   },
   {
-    order: 56,
+    order: 63,
     createdAt: '',
     email_id: 'adil@vayoo.markets',
     name: 'Vayoo Markets',
@@ -1453,7 +1643,7 @@ export const responses: Array<Response> = [
     superteamMember: 'India',
   },
   {
-    order: 57,
+    order: 64,
     createdAt: '',
     email_id: 'raj@truts.xyz',
     name: 'Truts',
@@ -1478,7 +1668,7 @@ export const responses: Array<Response> = [
     superteamMember: 'India',
   },
   {
-    order: 58,
+    order: 65,
     createdAt: '',
     email_id: 'bhagyamudgal@gmail.com',
     name: 'NotiSol',
@@ -1504,7 +1694,7 @@ export const responses: Array<Response> = [
     superteamMember: 'India',
   },
   {
-    order: 59,
+    order: 66,
     createdAt: '',
     email_id: 'shukarsh@gmail.com',
     name: 'Cordelia',

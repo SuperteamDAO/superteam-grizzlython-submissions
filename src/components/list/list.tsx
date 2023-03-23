@@ -135,6 +135,9 @@ const List = () => {
                   setSearchFilters={setSearchFilters}
                 />
               </div>
+              <p className="text-right text-xs italic text-zinc-600">
+                Last updated on 2023-03-23 @ 11:15am IST
+              </p>
             </div>
           </div>
         </div>

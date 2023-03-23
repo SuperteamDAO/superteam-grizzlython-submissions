@@ -37,11 +37,18 @@ const Card = ({ response }: CardProps) => {
 
   let logoUrl = response?.logoUrl || '';
   if (logoUrl.indexOf('drive.google.com') >= 0) {
-    const split1 = logoUrl.split('/d/');
-    if (split1?.length === 2) {
-      const split2 = split1[1]?.split('/view');
-      if (split2 && split2?.length >= 2) {
-        logoUrl = `https://drive.google.com/uc?export=view&id=${split2[0]}`;
+    if (logoUrl.indexOf('/open?id=') >= 0) {
+      const split1 = logoUrl.split('/open?id=');
+      if (split1 && split1?.length >= 2) {
+        logoUrl = `https://drive.google.com/uc?export=view&id=${split1[1]}`;
+      }
+    } else {
+      const split1 = logoUrl.split('/d/');
+      if (split1?.length === 2) {
+        const split2 = split1[1]?.split('/view');
+        if (split2 && split2?.length >= 2) {
+          logoUrl = `https://drive.google.com/uc?export=view&id=${split2[0]}`;
+        }
       }
     }
   }

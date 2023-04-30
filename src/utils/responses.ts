@@ -1830,7 +1830,7 @@ export const responses: Array<Response> = [
     logoUrl:
       'https://pbs.twimg.com/profile_images/1631466068790362113/JKHvYGv0_400x400.jpg',
     productUrl: 'https://www.lancer.so/',
-    codeUrl: 'https://github.com/Cordelia-Program/Cordelia-Anchor',
+    codeUrl: '',
     projectUrls: '',
     teamLeadName: 'Quetzal Q',
     teamLeadEmail: '',

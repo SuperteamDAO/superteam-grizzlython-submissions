@@ -1829,7 +1829,7 @@ export const responses: Array<Response> = [
       'Lancer is a revolutionary marketplace for developers. Ship faster. Hire developers. on a per-task basis.',
     logoUrl:
       'https://pbs.twimg.com/profile_images/1631466068790362113/JKHvYGv0_400x400.jpg',
-    productUrl: 'https://www.loom.com/share/bd27f92a367046c6941cca5af30b0a63',
+    productUrl: 'https://www.lancer.so/',
     codeUrl: 'https://github.com/Cordelia-Program/Cordelia-Anchor',
     projectUrls: '',
     teamLeadName: 'Quetzal Q',
@@ -1841,7 +1841,7 @@ export const responses: Array<Response> = [
     teamLeadDiscordId: '',
     teamMembersDiscordIds: '',
     track: 'Payments, Tools & Infrastructure',
-    demoUrl: '',
+    demoUrl: 'https://www.loom.com/share/bd27f92a367046c6941cca5af30b0a63',
     category: 'Payments',
     superteamMember: 'India',
   },
